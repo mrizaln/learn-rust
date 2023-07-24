@@ -1,6 +1,6 @@
 use std::error::Error;
 use std::fmt::{self, Display, Formatter};
-use std::fs::{self, File};
+use std::fs::File;
 use std::io::{self, Read};
 
 #[derive(Debug)]
@@ -36,7 +36,7 @@ fn read_username(path: &str) -> Result<String, ReadUsernameError> {
 }
 
 pub fn main() {
-    fs::write("config.dat", "").unwrap();
+    // fs::write("config.dat", "").unwrap();
     let username = read_username("config.dat");
     println!("username or error: {username:?}");
 }
